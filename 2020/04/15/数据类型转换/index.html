@@ -8,14 +8,17 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>数据类型转换 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="article">
+  <meta name="description" content="数据类型转换123456int i &#x3D; 128;        byte b &#x3D; (byte)i;   &#x2F;&#x2F;-128        double d &#x3D; i;       &#x2F;&#x2F;128        &#x2F;&#x2F;强制转换  (类型)变量名     高-&gt;低        &#x2F;&#x2F;自动转换                  低-&gt;高    12System.out.println((int)23.7)">
+<meta property="og:type" content="article">
 <meta property="og:title" content="数据类型转换">
 <meta property="og:url" content="http://yoursite.com/2020/04/15/%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="数据类型转换123456int i &#x3D; 128;        byte b &#x3D; (byte)i;   &#x2F;&#x2F;-128        double d &#x3D; i;       &#x2F;&#x2F;128        &#x2F;&#x2F;强制转换  (类型)变量名     高-&gt;低        &#x2F;&#x2F;自动转换                  低-&gt;高    12System.out.println((int)23.7)">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-04-15T01:06:48.000Z">
-<meta property="article:modified_time" content="2020-04-15T01:06:48.899Z">
+<meta property="article:modified_time" content="2020-04-15T03:47:17.829Z">
 <meta property="article:author" content="John Doe">
+<meta property="article:tag" content="类型转换">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
@@ -172,7 +175,23 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <h2 id="数据类型转换"><a href="#数据类型转换" class="headerlink" title="数据类型转换"></a>数据类型转换</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> i = <span class="number">128</span>;</span><br><span class="line">        <span class="keyword">byte</span> b = (<span class="keyword">byte</span>)i;   <span class="comment">//-128</span></span><br><span class="line">        <span class="keyword">double</span> d = i;       <span class="comment">//128</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">//强制转换  (类型)变量名     高-&gt;低</span></span><br><span class="line">        <span class="comment">//自动转换                  低-&gt;高</span></span><br></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">System.out.println((<span class="keyword">int</span>)<span class="number">23.7</span>);          <span class="comment">//23</span></span><br><span class="line">System.out.println((<span class="keyword">int</span>)-<span class="number">45.97F</span>);       <span class="comment">//-45</span></span><br></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">char</span> c = <span class="string">'a'</span>;</span><br><span class="line"><span class="keyword">int</span> num = c+<span class="number">1</span>;</span><br><span class="line">System.out.println(c);              <span class="comment">//a</span></span><br><span class="line">System.out.println(num);            <span class="comment">//98</span></span><br><span class="line">System.out.println((<span class="keyword">char</span>)num);      <span class="comment">//b</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="注意点"><a href="#注意点" class="headerlink" title="注意点"></a>注意点</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">1.不能对布尔值进行转换</span><br><span class="line">2.不能把对象类型转换为不相干的类型</span><br><span class="line">3.在把高类型转换为低类型时，强制转换</span><br><span class="line">4.转换时可能存在内存溢出，或精度问题</span><br></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//操作较大的数时，注意溢出问题</span></span><br><span class="line"><span class="comment">//数字可用下划线分割</span></span><br><span class="line"><span class="keyword">int</span> money = <span class="number">10_0000_0000</span>;</span><br><span class="line"><span class="keyword">int</span> years = <span class="number">20</span>;</span><br><span class="line"><span class="keyword">int</span> total = money * years;          <span class="comment">//-1474836480,计算的时候已经溢出</span></span><br><span class="line"><span class="keyword">long</span> total2 = money * years;        <span class="comment">//-1474836480，默认是int，转换之前已经存在问题</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">long</span> total3 = money * (<span class="keyword">long</span>)years;  <span class="comment">//20000000000</span></span><br></pre></td></tr></table></figure>
       
 
       
@@ -201,6 +220,17 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">类型转换</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -410,11 +440,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">变量</a>
+                <a href="javascript:void(0)" class="js-tag color5">数据类型</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">数据类型</a>
+                <a href="javascript:void(0)" class="js-tag color5">类型转换</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">变量</a>
               </li>
             
             <div class="clearfix"></div>
