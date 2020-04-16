@@ -152,6 +152,119 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-oop" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/04/16/oop/">oop</a>
+    </h1>
+  
+
+        
+        <a href="/2020/04/16/oop/" class="archive-article-date">
+  	<time datetime="2020-04-16T03:06:01.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-16</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="oop"><a href="#oop" class="headerlink" title="oop"></a>oop</h1><h3 id="alt-insert"><a href="#alt-insert" class="headerlink" title="alt+ insert"></a><strong><em>alt+ insert</em></strong></h3><p><strong>栈  ：  存放方法和变量的引用</strong></p>
+<p><strong>堆  ：  方法区属于堆，存放具体创建的对象。</strong></p>
+<p><img src="G:%5C24393%5CPictures%5CJavaMemory.png" alt="img"></p>
+<h2 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h2><p><strong><em>break和return的区别</em></strong></p>
+<p><strong>break</strong>：结束case；跳出循环</p>
+<p><strong>return</strong>：结束方法；返回一个结果</p>
+<h2 id="方法的调用"><a href="#方法的调用" class="headerlink" title="方法的调用"></a>方法的调用</h2><ol>
+<li><p>静态方法</p>
+<p><strong>static和类一起加载，不能调用非静态方法</strong></p>
+<p><strong>非静态方法是类实例化后才存在</strong></p>
+</li>
+<li><p>非静态方法</p>
+</li>
+<li><p>形参和实参</p>
+</li>
+<li><p>值传递和引用传递</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//值传递</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Demo02</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> a =<span class="number">1</span>;</span><br><span class="line">        System.out.println(a);      <span class="comment">//1</span></span><br><span class="line"></span><br><span class="line">        Demo02.change(a);</span><br><span class="line">        System.out.println(a);      <span class="comment">//1</span></span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">//返回值为空</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">change</span><span class="params">(<span class="keyword">int</span> a)</span></span>&#123;</span><br><span class="line">        a =<span class="number">10</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">//引用传递：对象；本质还是值传递</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//对象  内存</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Demo03</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        Person person = <span class="keyword">new</span> Person();</span><br><span class="line"></span><br><span class="line">        System.out.println(person.name);    <span class="comment">//null</span></span><br><span class="line"></span><br><span class="line">        Demo03.change(person);</span><br><span class="line">        System.out.println(person.name);    <span class="comment">//亮司</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">change</span><span class="params">(Person person)</span></span>&#123;</span><br><span class="line">        <span class="comment">//person是一个对象：指向----&gt;Person person = new Person()</span></span><br><span class="line">        <span class="comment">//这是一个具体的人，可以改变属性</span></span><br><span class="line">        person.name = <span class="string">"亮司"</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span></span>&#123;</span><br><span class="line">    String name;   <span class="comment">//null</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+</li>
+</ol>
+<ol start="5">
+<li>this </li>
+</ol>
+<h2 id="构造器"><a href="#构造器" class="headerlink" title="构造器"></a>构造器</h2><ol>
+<li><p>和类名相同</p>
+</li>
+<li><p>没有返回值</p>
+<h3 id="作用"><a href="#作用" class="headerlink" title="作用"></a>作用</h3><ol>
+<li>new本质在调用构造器</li>
+<li>初始化对象的值</li>
+</ol>
+<h3 id="注意点"><a href="#注意点" class="headerlink" title="注意点"></a>注意点</h3><ol>
+<li>定义有参构造后，如果使用无参构造，显示定义无参构造器</li>
+</ol>
+</li>
+</ol>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">oop</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/04/16/oop/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-数组" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -172,7 +285,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h2><p><img src="D:%5CJava%E7%8B%82%E7%A5%9E%E8%AF%B4%5CJava%E5%9F%BA%E7%A1%80%5Cjava%E5%86%85%E5%AD%98.PNG" alt="Java内存"></p>
+        <h2 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h2><p><img src="G:%5C24393%5CPictures%5Cmind.PNG" alt="Java内存"></p>
 <p><strong>数组本身就是对象，Java对象是在堆中的，因此数组无论保存原始类型还是其他对象类型，数组对象本身是在堆中的</strong></p>
 <h2 id="数组使用"><a href="#数组使用" class="headerlink" title="数组使用"></a>数组使用</h2><ol>
 <li>For-Each循环  （arr.for）</li>
@@ -906,83 +1019,6 @@
 
 
   
-    <article id="post-数据类型" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/04/14/%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/">数据类型</a>
-    </h1>
-  
-
-        
-        <a href="/2020/04/14/%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/" class="archive-article-date">
-  	<time datetime="2020-04-14T12:20:01.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-14</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> demo;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">demo01</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="comment">//整数拓展</span></span><br><span class="line">        <span class="comment">// 进制       二进制0b   八进制0    十进制     十六进制0x</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">int</span> i = <span class="number">10</span>;</span><br><span class="line">        <span class="keyword">int</span> i2 = <span class="number">010</span>;       <span class="comment">//八进制</span></span><br><span class="line">        <span class="keyword">int</span> i3 = <span class="number">0x10</span>;      <span class="comment">//十六进制</span></span><br><span class="line">        System.out.println(i);</span><br><span class="line">        System.out.println(i2);</span><br><span class="line">        System.out.println(i3);</span><br><span class="line"></span><br><span class="line">        System.out.println(<span class="string">"========================================"</span>);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//=========================================================</span></span><br><span class="line">        <span class="comment">//浮点数拓展</span></span><br><span class="line">        <span class="comment">//银行业务怎么表示   钱</span></span><br><span class="line">        <span class="comment">// BigDecimal   数学工具类</span></span><br><span class="line">        <span class="comment">//=========================================================</span></span><br><span class="line">        <span class="comment">//float  有限  离散     舍入误差    大约      接近但不等于</span></span><br><span class="line">        <span class="comment">//double</span></span><br><span class="line">        <span class="comment">//最好完全避免使用浮点数进行比较</span></span><br><span class="line">        <span class="comment">//最好完全避免使用浮点数进行比较</span></span><br><span class="line">        <span class="comment">//最好完全避免使用浮点数进行比较</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        <span class="keyword">float</span> f = <span class="number">0.1f</span>;</span><br><span class="line">        <span class="keyword">double</span> d = <span class="number">1.0</span>/<span class="number">10</span>;</span><br><span class="line">        System.out.println(f==d);  <span class="comment">//false</span></span><br><span class="line">        System.out.println(f);</span><br><span class="line">        System.out.println(d);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        <span class="keyword">float</span> f1 = <span class="number">16544123132f</span>;</span><br><span class="line">        <span class="keyword">float</span> f2 = f1 + <span class="number">1</span>;</span><br><span class="line">        System.out.println(f1 == f2);   <span class="comment">//true</span></span><br><span class="line"></span><br><span class="line">        System.out.println(<span class="string">"========================================"</span>);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//=========================================================</span></span><br><span class="line">        <span class="comment">//字符拓展</span></span><br><span class="line">        <span class="comment">//=========================================================</span></span><br><span class="line">        <span class="keyword">char</span> c1 = <span class="string">'a'</span>;</span><br><span class="line">        <span class="keyword">char</span> c2 = <span class="string">'中'</span>;</span><br><span class="line"></span><br><span class="line">        System.out.println(c1);</span><br><span class="line">        System.out.println((<span class="keyword">int</span>)c1);</span><br><span class="line"></span><br><span class="line">        System.out.println(c2);</span><br><span class="line">        System.out.println((<span class="keyword">int</span>)c2);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//所有的字符本质还是数字</span></span><br><span class="line">        <span class="comment">//编码 Unicode表（97=a  65=A） 0-65536</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">//U0000  UFFFF</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">char</span> c3 = <span class="string">'\u0061'</span>;</span><br><span class="line">        System.out.println(c3);  <span class="comment">// a</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">//转义字符</span></span><br><span class="line">        <span class="comment">//  \t</span></span><br><span class="line">        <span class="comment">//  \n</span></span><br><span class="line"></span><br><span class="line">        System.out.println(<span class="string">"Hello\tWorld"</span>);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        System.out.println(<span class="string">"========================================"</span>);</span><br><span class="line"></span><br><span class="line">        String stra = <span class="keyword">new</span> String(<span class="string">"hello world"</span>);</span><br><span class="line">        String strb = <span class="keyword">new</span> String(<span class="string">"hello world"</span>);</span><br><span class="line">        System.out.println(stra==strb);   <span class="comment">//false</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        String strc = <span class="string">"hello world"</span>;</span><br><span class="line">        String strd = <span class="string">"hello world"</span>;</span><br><span class="line">        System.out.println(strc==strd);     <span class="comment">//true</span></span><br><span class="line">        </span><br><span class="line">        <span class="comment">//对象  从内存分析</span></span><br><span class="line">        </span><br><span class="line">        </span><br><span class="line">        <span class="comment">//布尔值拓展</span></span><br><span class="line">        <span class="keyword">boolean</span> flag = <span class="keyword">true</span>;</span><br><span class="line">        <span class="keyword">if</span>(flag)&#123;&#125;</span><br><span class="line">        <span class="keyword">if</span>(flag == <span class="keyword">true</span>)&#123;&#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">数据类型</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/04/14/%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &amp;raquo;</a>
@@ -1125,6 +1161,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">数据类型</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">oop</a>
               </li>
             
             <div class="clearfix"></div>
