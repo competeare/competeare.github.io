@@ -152,6 +152,164 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-oop小结" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/04/16/oop%E5%B0%8F%E7%BB%93/">oop小结</a>
+    </h1>
+  
+
+        
+        <a href="/2020/04/16/oop%E5%B0%8F%E7%BB%93/" class="archive-article-date">
+  	<time datetime="2020-04-16T05:46:55.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-16</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="类与对象"><a href="#类与对象" class="headerlink" title="类与对象"></a>类与对象</h2><p>类是一个模板，是抽象的</p>
+<p>对象是一个具体的实例</p>
+<hr>
+<h2 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h2><p>定于        调用</p>
+<hr>
+<h2 id="对象的引用"><a href="#对象的引用" class="headerlink" title="对象的引用"></a>对象的引用</h2><p>基本类型（8）</p>
+<p>引用类型</p>
+<p>对象是通过引用来操作的：栈—–&gt;堆</p>
+<hr>
+<h2 id="属性-：字段Field-成员变量"><a href="#属性-：字段Field-成员变量" class="headerlink" title="属性 ：字段Field    成员变量"></a>属性 ：字段Field    成员变量</h2><p>默认初始化：</p>
+<p>​        数字 ： 0        0.0</p>
+<p>​        char：  u0000</p>
+<p>​        boolean：false</p>
+<p>​        引用：null</p>
+<hr>
+<h2 id="对象创建和使用"><a href="#对象创建和使用" class="headerlink" title="对象创建和使用"></a>对象创建和使用</h2><ul>
+<li><p>必须使用new关键字创造对象，  构造器</p>
+</li>
+<li><p>对象的属性</p>
+</li>
+<li><p>对象的方法</p>
+</li>
+</ul>
+<hr>
+<h2 id="类"><a href="#类" class="headerlink" title="类"></a>类</h2><ul>
+<li>静态的属性</li>
+<li>动态的行为</li>
+</ul>
+<h1 id="面向对象三大特性"><a href="#面向对象三大特性" class="headerlink" title="面向对象三大特性"></a>面向对象三大特性</h1><h2 id="封装"><a href="#封装" class="headerlink" title="封装"></a>封装</h2><ul>
+<li><strong><em>高内聚，低耦合</em></strong></li>
+<li>get/set方法</li>
+</ul>
+<h2 id="继承-（ctrl-h继承树）"><a href="#继承-（ctrl-h继承树）" class="headerlink" title="继承  （ctrl+h继承树）"></a>继承  （ctrl+h继承树）</h2><ul>
+<li><p>Object类</p>
+</li>
+<li><p>super  <strong>私有的方法不能被继承</strong>、</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">-super调用父类的构造方法，必须在构造方法的第一个</span><br><span class="line">-super必须只能出现在子类的方法或构造方法中</span><br><span class="line">-super和this不能同时调用构造方法</span><br><span class="line"></span><br><span class="line">-this </span><br><span class="line">	代表的对象不同</span><br><span class="line">		-this本身调用者这个对象</span><br><span class="line">		-super父类对象的引用</span><br><span class="line">	前提</span><br><span class="line">		-this没有继承也可以使用</span><br><span class="line">		-super只能在继承条件下使用</span><br><span class="line">	构造方法</span><br><span class="line">		-this() 本类的构造</span><br><span class="line">		-super()  父类的构造</span><br></pre></td></tr></table></figure>
+
+
+
+</li>
+</ul>
+<ul>
+<li><p>方法重写   <strong><em>重写都是方法的重写，和属性无关</em></strong></p>
+<h3 id="重写：需要有继承关系，并且是子类重写父类得方法"><a href="#重写：需要有继承关系，并且是子类重写父类得方法" class="headerlink" title="重写：需要有继承关系，并且是子类重写父类得方法"></a>重写：需要有继承关系，并且是子类重写父类得方法</h3><ul>
+<li>方法名必须相同</li>
+<li>参数列表必须相同</li>
+<li>修饰符：范围可以扩大，但不能缩小</li>
+<li>抛出的异常：范围可以缩小，但不能扩大</li>
+</ul>
+<p><strong>即子类的方法必须和父类的要一致</strong></p>
+<p><strong>方法体不同</strong></p>
+<p>​    <strong><em>为什么需要重写？</em></strong></p>
+<ul>
+<li><p>父类的功能，子类不一定需要，或者不一定满足</p>
+<p>alt+insert  override</p>
+</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">B</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="comment">/*static*/</span> <span class="function"><span class="keyword">void</span> <span class="title">test</span><span class="params">()</span></span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"B--&gt;test"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+</li>
+</ul>
+  <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">//A继承了B</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">A</span> <span class="keyword">extends</span> <span class="title">B</span></span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">test</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">super</span>.test();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+  <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> com.oop.demo04.A;</span><br><span class="line"><span class="keyword">import</span> com.oop.demo04.B;</span><br><span class="line"></span><br><span class="line"><span class="comment">//一个项目只应该存在一个main方法</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Application</span> </span>&#123;</span><br><span class="line">    <span class="comment">/*</span></span><br><span class="line"><span class="comment">    静态方法与非静态的的方法区别很大</span></span><br><span class="line"><span class="comment">     静态方法：方法的调用只和左边有关，</span></span><br><span class="line"><span class="comment">                即定义的数据类型有关</span></span><br><span class="line"><span class="comment">     非静态方法：重写</span></span><br><span class="line"><span class="comment">                子类重写了父类的方法</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="comment">/*</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">         */</span></span><br><span class="line">        A a =  <span class="keyword">new</span> A();</span><br><span class="line">        a.test();   <span class="comment">//A的静态方法</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">//父类的引用指向了子类</span></span><br><span class="line">        B b = <span class="keyword">new</span> A();<span class="comment">//子类重写了父类的方法  </span></span><br><span class="line">        b.test();   <span class="comment">//B的静态方法</span></span><br><span class="line">		<span class="comment">/**</span></span><br><span class="line"><span class="comment">		结果</span></span><br><span class="line"><span class="comment">		A--&gt;test</span></span><br><span class="line"><span class="comment">		A--&gt;test</span></span><br><span class="line"><span class="comment">		*/</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="多态-动态编译"><a href="#多态-动态编译" class="headerlink" title="多态 动态编译"></a>多态 动态编译</h2><ul>
+<li>多态是方法的多态，属性没有多态</li>
+<li>父类和子类有联系    <strong>类型转换异常</strong>  ClassCastException</li>
+<li>存在的条件：1. 继承关系   2. 方法需要重写  *<em>3. 父类的引用指向子类对象  father f1 = new Son();  *</em></li>
+</ul>
+<h4 id="不能重写的方法"><a href="#不能重写的方法" class="headerlink" title="不能重写的方法"></a>不能重写的方法</h4><ol>
+<li>static 方法  属于类    他不属于实例</li>
+<li>final  常量</li>
+<li>private 方法</li>
+</ol>
+<ul>
+<li></li>
+</ul>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">oop</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/04/16/oop%E5%B0%8F%E7%BB%93/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-oop" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -901,95 +1059,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2020/04/15/%E5%8F%98%E9%87%8F/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-数据类型转换" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/04/15/%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2/">数据类型转换</a>
-    </h1>
-  
-
-        
-        <a href="/2020/04/15/%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2/" class="archive-article-date">
-  	<time datetime="2020-04-15T01:06:48.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-15</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="数据类型转换"><a href="#数据类型转换" class="headerlink" title="数据类型转换"></a>数据类型转换</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> i = <span class="number">128</span>;</span><br><span class="line">        <span class="keyword">byte</span> b = (<span class="keyword">byte</span>)i;   <span class="comment">//-128</span></span><br><span class="line">        <span class="keyword">double</span> d = i;       <span class="comment">//128</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">//强制转换  (类型)变量名     高-&gt;低</span></span><br><span class="line">        <span class="comment">//自动转换                  低-&gt;高</span></span><br></pre></td></tr></table></figure>
-
-
-
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">System.out.println((<span class="keyword">int</span>)<span class="number">23.7</span>);          <span class="comment">//23</span></span><br><span class="line">System.out.println((<span class="keyword">int</span>)-<span class="number">45.97F</span>);       <span class="comment">//-45</span></span><br></pre></td></tr></table></figure>
-
-
-
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">char</span> c = <span class="string">'a'</span>;</span><br><span class="line"><span class="keyword">int</span> num = c+<span class="number">1</span>;</span><br><span class="line">System.out.println(c);              <span class="comment">//a</span></span><br><span class="line">System.out.println(num);            <span class="comment">//98</span></span><br><span class="line">System.out.println((<span class="keyword">char</span>)num);      <span class="comment">//b</span></span><br></pre></td></tr></table></figure>
-
-
-
-<h3 id="注意点"><a href="#注意点" class="headerlink" title="注意点"></a>注意点</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">1.不能对布尔值进行转换</span><br><span class="line">2.不能把对象类型转换为不相干的类型</span><br><span class="line">3.在把高类型转换为低类型时，强制转换</span><br><span class="line">4.转换时可能存在内存溢出，或精度问题</span><br></pre></td></tr></table></figure>
-
-
-
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//操作较大的数时，注意溢出问题</span></span><br><span class="line"><span class="comment">//数字可用下划线分割</span></span><br><span class="line"><span class="keyword">int</span> money = <span class="number">10_0000_0000</span>;</span><br><span class="line"><span class="keyword">int</span> years = <span class="number">20</span>;</span><br><span class="line"><span class="keyword">int</span> total = money * years;          <span class="comment">//-1474836480,计算的时候已经溢出</span></span><br><span class="line"><span class="keyword">long</span> total2 = money * years;        <span class="comment">//-1474836480，默认是int，转换之前已经存在问题</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">long</span> total3 = money * (<span class="keyword">long</span>)years;  <span class="comment">//20000000000</span></span><br></pre></td></tr></table></figure>
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">类型转换</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/04/15/%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2/">展开全文 >></a>
         </p>
       
 
