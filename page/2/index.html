@@ -152,6 +152,88 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-Next与NextLine区别" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/04/15/Next%E4%B8%8ENextLine%E5%8C%BA%E5%88%AB/">Next与NextLine区别</a>
+    </h1>
+  
+
+        
+        <a href="/2020/04/15/Next%E4%B8%8ENextLine%E5%8C%BA%E5%88%AB/" class="archive-article-date">
+  	<time datetime="2020-04-15T06:17:35.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-15</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Next"><a href="#Next" class="headerlink" title="Next"></a>Next</h2><p><strong>不能接收空格</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//创建Scanner对象</span></span><br><span class="line">      Scanner scanner = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line"></span><br><span class="line">      System.out.println(<span class="string">"使用next方式接收："</span>);</span><br><span class="line"></span><br><span class="line">      <span class="keyword">if</span> (scanner.hasNext())&#123;</span><br><span class="line">          String string = scanner.next();</span><br><span class="line">          System.out.println(<span class="string">"输入的内容为："</span>+string);</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="comment">//关闭IO流,若不关闭会一直占用资源</span></span><br><span class="line">      scanner.close();</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="NextLine"><a href="#NextLine" class="headerlink" title="NextLine"></a>NextLine</h2><p><strong>能接收空格，以Enter键为结束标志。</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">Scanner scanner = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line"></span><br><span class="line">      System.out.println(<span class="string">"使用nextLine方式接收："</span>);</span><br><span class="line"></span><br><span class="line">      <span class="keyword">if</span> (scanner.hasNextLine())&#123;</span><br><span class="line">          String string = scanner.nextLine();</span><br><span class="line">          System.out.println(<span class="string">"输入的内容为："</span>+string);</span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">      <span class="comment">//</span></span><br><span class="line">      scanner.close();</span><br></pre></td></tr></table></figure>
+
+<h2 id="案例"><a href="#案例" class="headerlink" title="案例"></a>案例</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//输入多个数，求其总和与平均数，每输入一个数字用回车确认，输入非数字来结束</span></span><br><span class="line">      Scanner scanner = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line">      </span><br><span class="line">      <span class="comment">//sum</span></span><br><span class="line">      <span class="keyword">double</span> sum = <span class="number">0</span>;</span><br><span class="line">      <span class="comment">//count</span></span><br><span class="line">      <span class="keyword">int</span> count = <span class="number">0</span>;</span><br><span class="line">      </span><br><span class="line">      <span class="keyword">while</span> (scanner.hasNextDouble())&#123;</span><br><span class="line">          <span class="keyword">double</span> score = scanner.nextDouble();</span><br><span class="line">          </span><br><span class="line">          count++;</span><br><span class="line">          </span><br><span class="line">          sum += score;</span><br><span class="line">      &#125;</span><br><span class="line">      System.out.println(count + <span class="string">"个数的和为："</span> + sum);</span><br><span class="line">      System.out.println(count + <span class="string">"个数的平均值为："</span> + (sum/count));</span><br><span class="line">      </span><br><span class="line">      scanner.close();</span><br></pre></td></tr></table></figure>
+
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Next与NextLine区别</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/04/15/Next%E4%B8%8ENextLine%E5%8C%BA%E5%88%AB/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-Doc" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -1051,6 +1133,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">方法</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Thread</a>
               </li>
             
             <div class="clearfix"></div>
